@@ -1,0 +1,49 @@
+Theory of arrow functions
+const var= ()=>{
+  console.log("hello");
+}
+var();
+
+const square = (num)=>{
+  return num*num
+};
+square(3);
+
+const result=(num)=>num*num;
+
+callback functions
+
+const calculate=(a,b,operation)=>{
+  return operation(a,b);
+}
+const result=calculate(3,4,function(num1,num2){
+  return num1+num2;
+});
+console.log(result);
+
+
+request ke body mai data para hua hai post request humme data ko parse karna hota hai jo send karte hai esliye hum Middleware ka use karte hai jisse hum body parse kahte hai basically request ke body mai se data ko parse karta hai.
+
+const express= require('express');
+const app=express();
+//activate the server at 3000 port
+app.listen(3000,()=>{
+  console.log("port live at server 3000");
+});
+const bodyParser=require('body-parser');
+app.use(bodyParser.json);
+app.get('/',(request,response)=>{
+  response.send("hello jee kaise ho saare");
+});
+app.post('api/cars',(request,response)=>{
+  const {name,brand}=request.body;
+  console.log(name);
+  console.log(brand);
+  response.send("car successfully submitted");
+});
+MongoDb -- No Sql Database.
+crud operations
+create in MongoDb
+read in MongoDb
+update in mongodb
+Delete in mongodb
